@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  action="/update" method="post" >
+    <input type="hidden" name="id" th:value="${film.id}">
+    姓名: <input type="text" name="name" th:value="${film.name}"><br>
+    类型: <input type="text" name="type" th:value="${film.type}"><br>
+    地址: <input type="text" name="address" th:value="${film.address}"><br>
+    金额: <input type="text" name="money" th:value="${film.money}"><br>
+
+    <input type="submit" value="修改">
+</form>
+</body>
+</html>

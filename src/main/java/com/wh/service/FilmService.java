@@ -1,11 +1,12 @@
 package com.wh.service;
 
+import com.github.pagehelper.PageInfo;
 import com.wh.pojo.Film;
 
 import java.util.List;
 
 public interface FilmService {
-    List<Film> selectAll();
+    PageInfo<Film> selectAll(String name, Integer pageSize);
 
     Film findById(Integer id);
 

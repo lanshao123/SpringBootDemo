@@ -1,6 +1,7 @@
 server:
   port: 8081
 mybatis:
+  type-aliases-package: com.wh.pojo
   mapper-locations: classpath:mybatis/mapper/*.xml
 spring:
   datasource:
@@ -13,3 +14,14 @@ mapper:
   not-empty: false
   identity: MYSQL
   style: camelhump
+# 分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+logging:
+  level:
+    com:
+      wh:
+        mapper: debug
