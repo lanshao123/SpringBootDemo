@@ -1,12 +1,15 @@
 package com.wh.pojo;
 
 
+import javax.persistence.Transient;
+
 public class Students {
 
   private Integer id;
   private String name;
   private Integer age;
   private Integer tid;
+  @Transient
   private Teachers teachers;
 
   public Integer getId() {
@@ -15,6 +18,14 @@ public class Students {
 
   public void setId(Integer id) {
     this.id = id;
+  }
+
+  public Students(String name, Integer age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  public Students() {
   }
 
   public String getName() {
@@ -47,5 +58,16 @@ public class Students {
 
   public void setTeachers(Teachers teachers) {
     this.teachers = teachers;
+  }
+
+  @Override
+  public String toString() {
+    return "Students{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", age=" + age +
+            ", tid=" + tid +
+            ", teachers=" + teachers +
+            '}';
   }
 }
