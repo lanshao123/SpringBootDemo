@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 @Mapper
-public interface StudentsMapper {
+public interface StudentsMapper extends tk.mybatis.mapper.common.Mapper<Students> {
      void addListStudents(List<Students> students, @Param("id") Integer id);
 
     List<Students> finStudentsAll();

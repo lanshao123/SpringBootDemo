@@ -1,9 +1,13 @@
 package com.wh.pojo;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import java.util.Date;
 import java.util.List;
 
 public class Teachers {
@@ -12,6 +16,10 @@ public class Teachers {
   private Integer id;
   private String name;
   private Integer age;
+  private Date createTime;
+  // @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  // @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+0")
+  private Date updateTime;
   @Transient
   private List<Students> students;
 
@@ -47,13 +55,19 @@ public class Teachers {
     this.students = students;
   }
 
-  @Override
-  public String toString() {
-    return "Teachers{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            ", age=" + age +
-            ", students=" + students +
-            '}';
+  public Date getCreateTime() {
+    return createTime;
+  }
+
+  public void setCreateTime(Date createTime) {
+    this.createTime = createTime;
+  }
+
+  public Date getUpdateTime() {
+    return updateTime;
+  }
+
+  public void setUpdateTime(Date updateTime) {
+    this.updateTime = updateTime;
   }
 }
